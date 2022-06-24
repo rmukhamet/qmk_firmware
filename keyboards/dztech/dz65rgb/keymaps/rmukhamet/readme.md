@@ -42,3 +42,8 @@
     qmk compile
 
 ```
+#### build to flash with isp
+with bootloader
+``` 
+make dztech/dz65rgb/v3:rmukhamet:production   
+```
