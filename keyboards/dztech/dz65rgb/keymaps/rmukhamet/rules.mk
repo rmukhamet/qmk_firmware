@@ -1,4 +1,6 @@
 # Userspace defines
+BOOTLOADER = qmk-dfu
+#QMK_BOOTLOADER_TYPE = qmk-dfu
 RGB_MATRIX_ENABLE = no # Disable the ugly RGB light
 
 BACKLIGHT_ENABLE = no
