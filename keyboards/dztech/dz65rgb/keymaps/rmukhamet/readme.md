@@ -47,3 +47,27 @@ with bootloader
 ``` 
 make dztech/dz65rgb/v3:rmukhamet:production   
 ```
+
+
+
+# guades 
+new flash 
+https://docs.google.com/document/d/1XjUHycMxzGOkYcV6PA7MNnabM38MM2uzsL4wglNATQw/edit#heading=h.k9asa2gc7xot
+
+ogininal 
+https://docs.google.com/document/d/1B3y8U0wn-zLecDph4QvYtxYSmy3n23creO9Vme2w61g/edit#
+hex or bin
+https://docs.google.com/document/d/1TPTPQbGgHDkwnE-awTKdbrCHVg7UklC2uYy5JpFZVNM/edit
+
+
+https://github.com/moyi4681/firmware
+
+
+
+
+# helpful to cfg
+
+https://thomasbaart.nl/2018/12/20/qmk-basics-leader-key/
+https://thomasbaart.nl/2018/12/13/qmk-basics-tap-dance/
+https://thomasbaart.nl/2018/12/09/qmk-basics-tap-and-hold-actions/
+https://thomasbaart.nl/2018/12/06/qmk-basics-how-to-add-a-layer-to-your-keymap/
