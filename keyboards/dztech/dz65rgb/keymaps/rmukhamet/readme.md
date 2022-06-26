@@ -11,7 +11,7 @@
        |-----------------------------------------------------------------------------|
        |Shift    |  Z |  X |  C |  V |  B |  N |  M |  , |  . |  / |Shift  | Up |PgDn|
        |-----------------------------------------------------------------------------|
-       |Ctrl |Alt  |Win  |           Space            |Alt | FN |Ctrl |Lef |Dow |Rig |
+       |Ctrl |Alt  |Win  |           Space            |Win | FN |Ctrl |Lef |Dow |Rig |
        `-----------------------------------------------------------------------------'
 ```
 
@@ -32,7 +32,7 @@
 
 ### Build layout
 
-```
+``` bash
     python3 -m ensurepip 
     python3 -m pip install qmk 
     git clone git@github.com:rmukhamet/qmk_firmware.git      
@@ -42,28 +42,32 @@
     qmk compile
 
 ```
+
 #### build to flash with isp
+
+flashed https://github.com/qmk/qmk_firmware/blob/master/util/bootloader_atmega32u4_1.0.0.hex over isp 
+
 with bootloader
-``` 
+
+``` bash
 make dztech/dz65rgb/v3:rmukhamet:production   
 ```
 
+# guades
 
-
-# guades 
-new flash 
+new flash  
 https://docs.google.com/document/d/1XjUHycMxzGOkYcV6PA7MNnabM38MM2uzsL4wglNATQw/edit#heading=h.k9asa2gc7xot
 
-ogininal 
+ogininal
 https://docs.google.com/document/d/1B3y8U0wn-zLecDph4QvYtxYSmy3n23creO9Vme2w61g/edit#
 hex or bin
 https://docs.google.com/document/d/1TPTPQbGgHDkwnE-awTKdbrCHVg7UklC2uYy5JpFZVNM/edit
 
-
 https://github.com/moyi4681/firmware
 
 
-
+## screw at 
+TAB, LCTRL, LALT, space, H, G, LARROW, DARROW, |\
 
 # helpful to cfg
 
