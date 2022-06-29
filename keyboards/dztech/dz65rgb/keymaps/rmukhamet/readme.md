@@ -1,6 +1,6 @@
 # DZ65RGB v3
 
-```
+``` no_code
     Keymap Default Layer
        ,-----------------------------------------------------------------------------.
        |~ ` |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 |  0 |  - |  = |Backsp |Home|
@@ -15,7 +15,7 @@
        `-----------------------------------------------------------------------------'
 ```
 
-```
+``` no_code
     Keymap Function Layer
        ,-----------------------------------------------------------------------------.
        |Esc  | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 | F9 |F10 |F11 |F12 |DEL   |PNTS|
@@ -30,7 +30,7 @@
        `-----------------------------------------------------------------------------'
 ```
 
-### Build layout
+## Build layout
 
 ``` bash
     python3 -m ensurepip 
@@ -43,7 +43,7 @@
 
 ```
 
-#### build to flash with isp
+### build to flash with isp
 
 flashed https://github.com/qmk/qmk_firmware/blob/master/util/bootloader_atmega32u4_1.0.0.hex over isp 
 
@@ -53,7 +53,7 @@ with bootloader
 make dztech/dz65rgb/v3:rmukhamet:production   
 ```
 
-# guades
+## guades
 
 new flash  
 https://docs.google.com/document/d/1XjUHycMxzGOkYcV6PA7MNnabM38MM2uzsL4wglNATQw/edit#heading=h.k9asa2gc7xot
@@ -66,10 +66,11 @@ https://docs.google.com/document/d/1TPTPQbGgHDkwnE-awTKdbrCHVg7UklC2uYy5JpFZVNM/
 https://github.com/moyi4681/firmware
 
 
-## screw at 
+## screw at
+
 TAB, LCTRL, LALT, space, H, G, LARROW, DARROW, |\
 
-# helpful to cfg
+## helpful to cfg
 
 https://thomasbaart.nl/2018/12/20/qmk-basics-leader-key/
 https://thomasbaart.nl/2018/12/13/qmk-basics-tap-dance/

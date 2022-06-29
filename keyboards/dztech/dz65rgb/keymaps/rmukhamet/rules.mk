@@ -1,7 +1,7 @@
 # Userspace defines
 MCU = atmega32u4
 BOOTLOADER = atmel-dfu
-RGB_MATRIX_ENABLE = no # Disable the RGB light
+RGB_MATRIX_ENABLE = yes # Disable the RGB light
 BACKLIGHT_ENABLE = no
 KEY_LOCK_ENABLE = no
 RGBLIGHT_ENABLE = no # additional backlight
@@ -13,3 +13,6 @@ MOUSEKEY_ENABLE = yes
 # LTO_ENABLE = yes
 EXTRAKEY_ENABLE = yes       # Audio control and System control
 TAP_DANCE_ENABLE = yes
+
+LEADER_ENABLE = yes
+#COMBO_ENABLE = yes
