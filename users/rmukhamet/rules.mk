@@ -16,3 +16,7 @@ endif
 ifeq ($(strip $(COMBO_ENABLE)), yes)
 	SRC += combo.c
 endif
+
+ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
+	SRC += rgb.c
+endif

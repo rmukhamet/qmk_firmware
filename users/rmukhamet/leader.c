@@ -43,27 +43,18 @@ void matrix_scan_user(void) {
 }
 
 void leader_start(void) {
-#ifdef AUDIO_ENABLE
-rgblight_setrgb_range(5, 100, 199, 10, 15); 
-#endif
+#ifdef RGB_MATRIX_ENABLE
+   rgb_matrix_set_color_all(4, 100, 100);#endif
 }
 
 void leader_end(void) {
   if (did_leader_succeed) {
-#ifdef AUDIO_ENABLE
-rgblight_setrgb_range(5, 100, 199, 10, 15); 
-#endif
-  } else {
-#ifdef AUDIO_ENABLE
-rgblight_setrgb_range(5, 100, 199, 10, 15); 
-#endif
-  }
 
-  #ifdef RGBLIGHT_ENABLE
+  #ifdef RGB_MATRIX_ENABLE
   if (leader_succeed) {
-    fadeflash_leds(HSV_GREEN);
+   rgb_matrix_set_color_all(4, 100, 100);
   } else {
-    fadeflash_leds(HSV_RED);
+   rgb_matrix_set_color_all(4, 100, 100);
   }
 #endif
 }
