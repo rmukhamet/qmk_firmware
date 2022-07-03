@@ -7,8 +7,6 @@ ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
 	SRC += tap_dance.c
 endif
 
-
-
 ifeq ($(strip $(MOUSEKEY_ENABLE)), yes)
 	SRC += mouse.c
 endif

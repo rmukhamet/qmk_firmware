@@ -48,7 +48,7 @@
 // RGB Matrix Animation modes. Explicitly enabled
 // For full list of effects, see:
 // https://docs.qmk.fm/#/feature_rgb_matrix?id=rgb-matrix-effects
-#    define ENABLE_RGB_MATRIX_ALPHAS_MODS
+/*#    define ENABLE_RGB_MATRIX_ALPHAS_MODS
 #    define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
 #    define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
 #    define ENABLE_RGB_MATRIX_BREATHING
@@ -95,6 +95,8 @@
 #    define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 
 #    define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_CYCLE_ALL
+
+*/
 #    define DRIVER_ADDR_1 0b0110000
 #    define DRIVER_COUNT 1
 #    define DRIVER_LED_TOTAL 68
