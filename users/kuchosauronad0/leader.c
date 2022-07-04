@@ -106,11 +106,4 @@ void leader_end(void) {
 // fade leader_start from 100 to 0
 // fade new color from  0 to 100 to 0
 // fade old color from 0 to 100
-#ifdef RGBLIGHT_ENABLE
-  if (leader_succeed) {
-    fadeflash_leds(HSV_GREEN);
-  } else {
-    fadeflash_leds(HSV_RED);
-  }
-#endif
 }
