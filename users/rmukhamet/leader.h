@@ -1,5 +1,5 @@
 /*
-  Copyright 2022 Rafael Moukhametdzhanov   @rmukhamet
+  Copyright 2022 Rafael Moukhametdzhanov @rmukhamet
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -16,6 +16,4 @@
 */
 #pragma once
 
-#define LEADER_TIMEOUT 1000
 
-//#define LEADER_PER_KEY_TIMING
