@@ -16,6 +16,6 @@
 */
 #pragma once
 
-#define MOUSEKEY_BASE_SPEED 500
+#define MOUSEKEY_BASE_SPEED 300
 #define MK_COMBINED
 

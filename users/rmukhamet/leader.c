@@ -15,28 +15,24 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "leader.h"
+#include "quantum.h"
 
+bool leader_succeed;
 
-bool did_leader_succeed;
-#ifdef AUDIO_ENABLE
-float leader_start[][2] = SONG(ONE_UP_SOUND );
-float leader_succeed[][2] = SONG(ALL_STAR);
-float leader_fail[][2] = SONG(RICK_ROLL);
-#endif
 LEADER_EXTERNS();
 
 void matrix_scan_user(void) {
   LEADER_DICTIONARY() {
-    did_leader_succeed = leading = false;
+    leader_succeed = leading = false;
 
     SEQ_ONE_KEY(KC_E) {
       // Anything you can do in a macro.
-      SEND_STRING(SS_LCTL(SS_LSFT("t")));
-      did_leader_succeed = true;
+      SEND_STRING("leader E test success");
+      leader_succeed = true;
     } else 
     SEQ_TWO_KEYS(KC_E, KC_D) {
-      SEND_STRING(SS_LGUI("r") "cmd\n" SS_LCTL("c"));
-      did_leader_succeed = true;
+      SEND_STRING("leader E D test success");
+      leader_succeed = true;
     }
     leader_end();
   }
@@ -44,18 +40,19 @@ void matrix_scan_user(void) {
 
 void leader_start(void) {
 #ifdef RGB_MATRIX_ENABLE
-   rgb_matrix_set_color_all(4, 100, 100);#endif
+   rgb_matrix_set_color_all(255, 255, 0);
+#endif
 }
 
 void leader_end(void) {
-  if (did_leader_succeed) {
-
   #ifdef RGB_MATRIX_ENABLE
   if (leader_succeed) {
-   rgb_matrix_set_color_all(4, 100, 100);
+   rgb_matrix_set_color_all(0, 255, 0);
   } else {
-   rgb_matrix_set_color_all(4, 100, 100);
+   rgb_matrix_set_color_all(255, 0, 0);
   }
+  //sleep(20);
+  rgb_matrix_set_color_all(0, 0, 0);
 #endif
 }
 
