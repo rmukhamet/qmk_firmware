@@ -68,3 +68,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+
+
+
+const key_override_t alt_space_override = ko_make_with_layers_negmods_and_options(
+    MOD_MASK_ALT,   // Trigger modifiers: alt 
+    KC_SPACE,       // Trigger key: 						
+    LCTL(KC_SPACE), // Replacement key
+    _BL,            // Activate on layer
+    MOD_MASK_CS,    // Do not activate when shift or ctrl are pressed
+    ko_option_no_reregister_trigger // Specifies that the play key is not registered again after lifting ctrl
+); 
+
+
+
+
+// This globally defines all key overrides to be used
+const key_override_t **key_overrides = (const key_override_t *[]){
+	&alt_space_override,
+    NULL
+};

@@ -1,5 +1,4 @@
 #pragma once
 #define LEADER_TIMEOUT 600
 #define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_NONE
-
 //#define LEADER_PER_KEY_TIMING
