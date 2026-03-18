@@ -16,4 +16,6 @@
 */
 #pragma once
 
-#define TAPPING_TERM 170  
+#ifndef TAPPING_TERM
+#    define TAPPING_TERM 170
+#endif  

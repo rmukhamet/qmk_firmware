@@ -1,12 +1,11 @@
-#include QMK_KEYBOARD_H
+#include "rmukhamet.h"
 
-enum layers {
-    _BL,
+// Layers specific to this keyboard
+enum dz65_layers {
+    _BL = 0,
     _FL,
     _ML
 };
-
-#define CTRL_SPACE LCTL(KC_SPACE)
 
 
 /**************** LAYOUT *********************/

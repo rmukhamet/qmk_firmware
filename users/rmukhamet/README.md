@@ -1,5 +1,13 @@
 # DZ65 v3
 
+## install 
+sudo port install avrdude  dfu-programmer avr-gcc   dos2unix 
+uv tool install --with pip qmk    
+  sudo port install avr-gcc avr-libc
+
+## flash 
+qmk flash -kb dztech/dz65rgb/v3 -km rmukhamet
+
 ## history
 
 firmware size:

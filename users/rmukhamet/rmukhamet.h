@@ -16,8 +16,17 @@
 */
 #pragma once
 
-#ifndef MOUSEKEY_BASE_SPEED
-#    define MOUSEKEY_BASE_SPEED 300
-#endif
-#define MK_COMBINED
+#include QMK_KEYBOARD_H
 
+// Common key combinations
+#define CTRL_SPACE LCTL(KC_SPACE)
+
+// Note: Define layer enums in your keymap.c, not here
+// Example:
+// enum layers { _BL = 0, _FL, _ML };
+
+// Include feature headers
+#include "tap_dance.h"
+#include "leader.h"
+#include "mouse.h"
+#include "rgb.h"
