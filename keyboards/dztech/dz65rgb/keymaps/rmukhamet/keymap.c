@@ -44,7 +44,7 @@ enum {
   TD_LCTL_ML = 0
 };
 
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
   [TD_LCTL_ML] = ACTION_TAP_DANCE_DOUBLE(KC_LCTL, TG(_ML))
 };
 
@@ -54,21 +54,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS, KC_PGUP,
         LCTL_T(KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,           KC_ENT, KC_PGDN,
         KC_LSFT,                 KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,   KC_UP,  KC_END, 
-        KC_LCTL,    KC_LALT,   KC_LGUI,                            KC_SPC,                    KC_RALT, MO(_FL),  KC_LEAD, KC_LEFT, KC_DOWN, KC_RGHT
+        KC_LCTL,    KC_LALT,   KC_LGUI,                            KC_SPC,                    KC_RALT, MO(_FL),  QK_LEAD, KC_LEFT, KC_DOWN, KC_RGHT
     ),
     [_FL] = LAYOUT_65_ansi(
         _______,        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,  _______,
-        _______,        RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______, KC_PSCR, KC_SLCK, KC_PAUS, QK_BOOT, _______,
-        _______,        RGB_SPI, RGB_SPD, DB_TOGG, _______, _______, _______, _______, _______, _______, _______, _______,          EE_CLR , _______,
+        _______,        RM_TOGG, RM_NEXT, RM_HUEU, RM_HUED, RM_SATU, RM_SATD, RM_VALU, RM_VALD, _______, KC_PSCR, KC_SCRL, KC_PAUS, QK_BOOT, _______,
+        _______,        RM_SPDU, RM_SPDD, DB_TOGG, _______, _______, _______, _______, _______, _______, _______, _______,          EE_CLR , _______,
         _______,                 _______, _______, _______, _______, _______, NK_TOGG, _______, _______, _______, _______, _______, KC_VOLU, KC_MUTE,
-        TG(_ML),        _______, _______,                            _______,                   RESET,  _______, _______, KC_MPRV, KC_VOLD, KC_MNXT
+        TG(_ML),        _______, _______,                            _______,                   QK_BOOT,  _______, _______, KC_MPRV, KC_VOLD, KC_MNXT
     ),
     [_ML] = LAYOUT_65_ansi(
         XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_WH_U,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                KC_ENT , KC_WH_D,
-        CTRL_SPACE,                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BTN1, KC_MS_U, KC_BTN2,
-        _______,        XXXXXXX, XXXXXXX,                            XXXXXXX,                   XXXXXXX, MO(_FL), XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R
+        XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MS_WHLU,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                KC_ENT , MS_WHLD,
+        CTRL_SPACE,                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MS_BTN1, MS_UP, MS_BTN2,
+        _______,        XXXXXXX, XXXXXXX,                            XXXXXXX,                   XXXXXXX, MO(_FL), XXXXXXX, MS_LEFT, MS_DOWN, MS_RGHT
     )
 };
 
@@ -78,15 +78,13 @@ void matrix_init_user(void) {
 
 const key_override_t alt_space_override = ko_make_with_layers(
     KC_LALT,   // Trigger modifiers: alt 
-    KC_SPACE,       // Trigger key: space						
+    KC_SPACE,       // Trigger key: space
     CTRL_SPACE, // Replacement key
     ~0           // Activate on layer
-    //MOD_MASK_SHIFT,    // Do not activate when shift or ctrl are pressed
-  //  ko_option_no_reregister_trigger // Specifies that the space key is not registered again after lifting alt
-); 
+);
 const key_override_t alt_space_override_advanched = ko_make_with_layers_negmods_and_options(
     KC_TAB,   // Trigger modifiers: alt 
-    KC_SPACE,       // Trigger key: space						
+    KC_SPACE,       // Trigger key: space
     CTRL_SPACE, // Replacement key
     _BL,           // Activate on layer
     MOD_MASK_SHIFT,    // Do not activate when shift or ctrl are pressed
@@ -95,8 +93,8 @@ const key_override_t alt_space_override_advanched = ko_make_with_layers_negmods_
 const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
 // This globally defines all key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
-	&alt_space_override,
+const key_override_t *key_overrides[] = {
+    &alt_space_override,
     &delete_key_override,
     &alt_space_override_advanched,
     NULL

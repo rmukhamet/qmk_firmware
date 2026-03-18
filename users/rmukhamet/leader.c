@@ -17,42 +17,38 @@
 #include "leader.h"
 #include "quantum.h"
 
-bool leader_succeed;
+bool leader_succeed = false;
 
-LEADER_EXTERNS();
-
-void matrix_scan_user(void) {
-  LEADER_DICTIONARY() {
-    leader_succeed = leading = false;
-
-    SEQ_ONE_KEY(KC_E) {
-      // Anything you can do in a macro.
-      SEND_STRING("leader E test success");
-      leader_succeed = true;
-    } else 
-    SEQ_TWO_KEYS(KC_E, KC_D) {
-      SEND_STRING("leader E D test success");
-      leader_succeed = true;
-    }
-    leader_end();
-  }
-}
-
-void leader_start(void) {
+void leader_start_user(void) {
 #ifdef RGB_MATRIX_ENABLE
-   rgb_matrix_set_color_all(255, 255, 0);
+    rgb_matrix_set_color_all(255, 255, 0);
 #endif
 }
 
-void leader_end(void) {
-  #ifdef RGB_MATRIX_ENABLE
-  if (leader_succeed) {
-   rgb_matrix_set_color_all(0, 255, 0);
-  } else {
-   rgb_matrix_set_color_all(255, 0, 0);
-  }
-  //sleep(20);
-  rgb_matrix_set_color_all(0, 0, 0);
+void leader_end_user(void) {
+#ifdef RGB_MATRIX_ENABLE
+    if (leader_succeed) {
+        rgb_matrix_set_color_all(0, 255, 0);
+    } else {
+        rgb_matrix_set_color_all(255, 0, 0);
+    }
+    rgb_matrix_set_color_all(0, 0, 0);
 #endif
+    leader_succeed = false;
 }
 
+bool leader_add_user(uint16_t keycode) {
+    if (leader_sequence_one_key(KC_E)) {
+        SEND_STRING("leader E test success");
+        leader_succeed = true;
+        return true;
+    }
+    
+    if (leader_sequence_two_keys(KC_E, KC_D)) {
+        SEND_STRING("leader E D test success");
+        leader_succeed = true;
+        return true;
+    }
+    
+    return false;
+}
